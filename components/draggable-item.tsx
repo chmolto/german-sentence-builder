@@ -1,6 +1,8 @@
 "use client"
 
-import { useDrag } from "react-dnd"
+import { useDraggable } from "@dnd-kit/core"
+import { CSS } from "@dnd-kit/utilities"
+import { memo } from "react"
 import type { ItemType } from "./sentence-builder"
 
 interface DraggableItemProps {
@@ -9,14 +11,11 @@ interface DraggableItemProps {
   type: ItemType
 }
 
-export default function DraggableItem({ id, text, type }: DraggableItemProps) {
-  const [{ isDragging }, drag] = useDrag(() => ({
-    type: type,
-    item: { id, text, type },
-    collect: (monitor) => ({
-      isDragging: !!monitor.isDragging(),
-    }),
-  }))
+function DraggableItem({ id, text, type }: DraggableItemProps) {
+  const { attributes, listeners, setNodeRef, transform, isDragging } = useDraggable({
+    id,
+    data: { id, text, type }
+  })
 
   // Determine shape and color based on type
   const getShapeStyles = () => {
@@ -36,6 +35,11 @@ export default function DraggableItem({ id, text, type }: DraggableItemProps) {
           className: "clip-path-square bg-blue-300 border-blue-500 hover:bg-blue-200 shape-shadow shape-hover",
           style: {},
         }
+      case "dativ":
+        return {
+          className: "clip-path-triangle bg-green-300 border-green-500 hover:bg-green-200 shape-shadow shape-hover",
+          style: {},
+        }
       default:
         return {
           className: "bg-gray-300 border-gray-500 shape-shadow",
@@ -45,22 +49,32 @@ export default function DraggableItem({ id, text, type }: DraggableItemProps) {
   }
 
   const { className, style } = getShapeStyles()
+  
+  const dragStyle = {
+    ...style,
+    transform: CSS.Transform.toString(transform),
+    transition: isDragging ? 'none' : 'transform 0.2s ease',
+    zIndex: isDragging ? 999 : 1,
+    touchAction: 'none',
+  }
 
   return (
     <div
-      ref={drag}
+      ref={setNodeRef}
+      {...listeners}
+      {...attributes}
       className={`
         ${className}
         w-full h-32 flex items-center justify-center
         text-center font-medium border-2 cursor-move
-        transition-all duration-200 select-none
-        ${isDragging ? "opacity-50 scale-105" : "opacity-100"}
+        select-none
+        ${isDragging ? "opacity-50" : "opacity-100"}
       `}
-      style={{
-        ...style,
-      }}
+      style={dragStyle}
     >
-      <span className="px-2 py-1 text-sm sm:text-base">{text}</span>
+      <span className="px-2 py-1 text-sm sm:text-base z-above-clip-path">{text}</span>
     </div>
   )
 }
+
+export default memo(DraggableItem)
