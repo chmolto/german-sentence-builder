@@ -1,0 +1,18 @@
+# German Sentence Builder
+
+## Overview
+
+German Sentence Builder is an interactive web application designed to help users learn and practice German sentence structure. The app uses a drag-and-drop interface with color-coded and shape-coded elements representing different parts of speech (Nominativ, Verb, Akkusativ). Users can construct sentences by dragging these elements into the correct positions, reinforcing their understanding of German grammar.
+
+## Features
+
+- Drag-and-drop interface for sentence construction
+- Color-coded and shape-coded grammatical elements:
+  - Nominativ (Subject): Yellow hexagons
+  - Verb: Black crosses
+  - Akkusativ (Object): Blue squares
+- Multiple sentence patterns to practice
+- Responsive design for both desktop and mobile use
+- Immediate feedback on correct sentence formation
+
+The project is built using Next.js and React, with Tailwind CSS for styling. 
