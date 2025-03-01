@@ -107,11 +107,17 @@ function DropTarget({ id, type, position, onDrop, onRemove, item }: DropTargetPr
           <div
             className={`
               w-full h-full flex items-center justify-center
-              ${item.type === "nominativ" ? "clip-path-hexagon bg-yellow-300 border-yellow-500" : ""}
-              ${item.type === "verb" ? "clip-path-cross bg-black text-white border-gray-700" : ""}
-              ${item.type === "akkusativ" ? "clip-path-square bg-blue-300 border-blue-500" : ""}
-              ${item.type === "dativ" ? "clip-path-triangle bg-green-300 border-green-500" : ""}
-              border-2 text-center font-medium shape-shadow
+              ${item.type === "nominativ" ? "clip-path-hexagon bg-yellow-300" : ""}
+              ${item.type === "verb" ? "clip-path-cross bg-black text-white" : ""}
+              ${item.type === "akkusativ" ? "clip-path-square bg-blue-300" : ""}
+              ${item.type === "dativ" ? "clip-path-triangle bg-green-300" : ""}
+              relative
+              before:absolute before:inset-0 before:content-[''] 
+              ${item.type === "nominativ" ? "before:clip-path-hexagon before:border-2 before:border-yellow-500" : ""}
+              ${item.type === "verb" ? "before:clip-path-cross before:border-2 before:border-gray-700" : ""}
+              ${item.type === "akkusativ" ? "before:clip-path-square before:border-2 before:border-blue-500" : ""}
+              ${item.type === "dativ" ? "before:clip-path-triangle before:border-2 before:border-green-500" : ""}
+              text-center font-medium shape-shadow
             `}
           >
             <span className="px-2 py-1 text-sm sm:text-base z-above-clip-path">{item.text}</span>
@@ -130,7 +136,12 @@ function DropTarget({ id, type, position, onDrop, onRemove, item }: DropTargetPr
             w-full h-full flex items-center justify-center
             ${getShapeClasses()}
             ${getBackgroundColor()}
-            border-2 border-dashed ${getBorderColor()}
+            relative
+            before:absolute before:inset-0 before:content-[''] 
+            ${type === "nominativ" ? "before:clip-path-hexagon before:border-2 before:border-dashed before:border-yellow-500" : ""}
+            ${type === "verb" ? "before:clip-path-cross before:border-2 before:border-dashed before:border-gray-700" : ""}
+            ${type === "akkusativ" ? "before:clip-path-square before:border-2 before:border-dashed before:border-blue-500" : ""}
+            ${type === "dativ" ? "before:clip-path-triangle before:border-2 before:border-dashed before:border-green-500" : ""}
             bg-opacity-80
           `}
         >

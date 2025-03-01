@@ -22,27 +22,27 @@ function DraggableItem({ id, text, type }: DraggableItemProps) {
     switch (type) {
       case "nominativ":
         return {
-          className: "clip-path-hexagon bg-yellow-300 border-yellow-500 hover:bg-yellow-200 shape-shadow shape-hover",
+          className: "clip-path-hexagon bg-yellow-300 hover:bg-yellow-200 shape-shadow shape-hover relative before:absolute before:inset-0 before:content-[''] before:clip-path-hexagon before:border-2 before:border-yellow-500",
           style: {},
         }
       case "verb":
         return {
-          className: "clip-path-cross bg-black text-white border-gray-700 hover:bg-gray-800 shape-shadow shape-hover",
+          className: "clip-path-cross bg-black text-white hover:bg-gray-800 shape-shadow shape-hover relative before:absolute before:inset-0 before:content-[''] before:clip-path-cross before:border-2 before:border-gray-700",
           style: {},
         }
       case "akkusativ":
         return {
-          className: "clip-path-square bg-blue-300 border-blue-500 hover:bg-blue-200 shape-shadow shape-hover",
+          className: "clip-path-square bg-blue-300 hover:bg-blue-200 shape-shadow shape-hover relative before:absolute before:inset-0 before:content-[''] before:clip-path-square before:border-2 before:border-blue-500",
           style: {},
         }
       case "dativ":
         return {
-          className: "clip-path-triangle bg-green-300 border-green-500 hover:bg-green-200 shape-shadow shape-hover",
+          className: "clip-path-triangle bg-green-300 hover:bg-green-200 shape-shadow shape-hover relative before:absolute before:inset-0 before:content-[''] before:clip-path-triangle before:border-2 before:border-green-500",
           style: {},
         }
       default:
         return {
-          className: "bg-gray-300 border-gray-500 shape-shadow",
+          className: "bg-gray-300 shape-shadow relative before:absolute before:inset-0 before:content-[''] before:border-2 before:border-gray-500",
           style: {},
         }
     }
@@ -66,7 +66,8 @@ function DraggableItem({ id, text, type }: DraggableItemProps) {
       className={`
         ${className}
         w-full h-32 flex items-center justify-center
-        text-center font-medium border-2 cursor-move
+        text-center font-medium
+        cursor-move
         select-none
         ${isDragging ? "opacity-50" : "opacity-100"}
       `}

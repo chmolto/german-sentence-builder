@@ -84,24 +84,24 @@ const items = {
     { id: "akk-18", text: "den Hund", type: "akkusativ" as ItemType },
   ],
   verb: [
-    { id: "verb-1", text: "sehe", type: "verb" as ItemType },
-    { id: "verb-2", text: "siehst", type: "verb" as ItemType },
-    { id: "verb-3", text: "sieht", type: "verb" as ItemType },
-    { id: "verb-4", text: "sehen", type: "verb" as ItemType },
-    { id: "verb-5", text: "seht", type: "verb" as ItemType },
-    { id: "verb-6", text: "spricht", type: "verb" as ItemType },
-    { id: "verb-7", text: "ist", type: "verb" as ItemType },
-    { id: "verb-8", text: "nennt", type: "verb" as ItemType },
-    { id: "verb-9", text: "gefällt", type: "verb" as ItemType },
-    { id: "verb-10", text: "gratuliert", type: "verb" as ItemType },
-    { id: "verb-11", text: "liebt", type: "verb" as ItemType },
-    { id: "verb-12", text: "hasst", type: "verb" as ItemType },
-    { id: "verb-13", text: "kauft", type: "verb" as ItemType },
-    { id: "verb-14", text: "verkauft", type: "verb" as ItemType },
-    { id: "verb-15", text: "findet", type: "verb" as ItemType },
-    { id: "verb-16", text: "sucht", type: "verb" as ItemType },
-    { id: "verb-17", text: "braucht", type: "verb" as ItemType },
-    { id: "verb-18", text: "kennt", type: "verb" as ItemType },
+    { id: "verb-1", text: "sehen", type: "verb" as ItemType },
+    { id: "verb-2", text: "sprechen", type: "verb" as ItemType },
+    { id: "verb-3", text: "sein", type: "verb" as ItemType },
+    { id: "verb-4", text: "nennen", type: "verb" as ItemType },
+    { id: "verb-5", text: "gefallen", type: "verb" as ItemType },
+    { id: "verb-6", text: "gratulieren", type: "verb" as ItemType },
+    { id: "verb-7", text: "lieben", type: "verb" as ItemType },
+    { id: "verb-8", text: "hassen", type: "verb" as ItemType },
+    { id: "verb-9", text: "kaufen", type: "verb" as ItemType },
+    { id: "verb-10", text: "verkaufen", type: "verb" as ItemType },
+    { id: "verb-11", text: "finden", type: "verb" as ItemType },
+    { id: "verb-12", text: "suchen", type: "verb" as ItemType },
+    { id: "verb-13", text: "brauchen", type: "verb" as ItemType },
+    { id: "verb-14", text: "kennen", type: "verb" as ItemType },
+    { id: "verb-15", text: "geben", type: "verb" as ItemType },
+    { id: "verb-16", text: "nehmen", type: "verb" as ItemType },
+    { id: "verb-17", text: "lernen", type: "verb" as ItemType },
+    { id: "verb-18", text: "verstehen", type: "verb" as ItemType },
   ],
   dativ: [
     { id: "dat-1", text: "eurem Computer", type: "dativ" as ItemType },
@@ -145,11 +145,11 @@ const sentencePatterns = [
   {
     id: 3,
     slots: [
-      { id: "slot-1", type: "akkusativ", position: "object" },
-      { id: "slot-2", type: "verb", position: "verb" },
-      { id: "slot-3", type: "nominativ", position: "subject" },
+      { id: "slot-1", type: "nominativ", position: "subject" },
+      { id: "slot-2", type: "akkusativ", position: "object" },
+      { id: "slot-3", type: "verb", position: "verb" },
     ],
-    description: "Objekt + Verb + Subjekt",
+    description: "Subjekt + Akkusativ + Verb",
   },
   {
     id: 4,
@@ -164,39 +164,6 @@ const sentencePatterns = [
 
 // Tabla de conjugación de verbos alemanes comunes
 const verbConjugations: Record<string, Record<string, string>> = {
-  "sehe": {
-    "ich": "sehe", 
-    "du": "siehst", 
-    "er": "sieht", 
-    "sie": "sieht", 
-    "es": "sieht", 
-    "wir": "sehen", 
-    "ihr": "seht", 
-    "Sie": "sehen",
-    "default": "sehen"
-  },
-  "siehst": {
-    "ich": "sehe", 
-    "du": "siehst", 
-    "er": "sieht", 
-    "sie": "sieht", 
-    "es": "sieht", 
-    "wir": "sehen", 
-    "ihr": "seht", 
-    "Sie": "sehen",
-    "default": "sehen"
-  },
-  "sieht": {
-    "ich": "sehe", 
-    "du": "siehst", 
-    "er": "sieht", 
-    "sie": "sieht", 
-    "es": "sieht", 
-    "wir": "sehen", 
-    "ihr": "seht", 
-    "Sie": "sehen",
-    "default": "sehen"
-  },
   "sehen": {
     "ich": "sehe", 
     "du": "siehst", 
@@ -208,18 +175,7 @@ const verbConjugations: Record<string, Record<string, string>> = {
     "Sie": "sehen",
     "default": "sehen"
   },
-  "seht": {
-    "ich": "sehe", 
-    "du": "siehst", 
-    "er": "sieht", 
-    "sie": "sieht", 
-    "es": "sieht", 
-    "wir": "sehen", 
-    "ihr": "seht", 
-    "Sie": "sehen",
-    "default": "sehen"
-  },
-  "spricht": {
+  "sprechen": {
     "ich": "spreche", 
     "du": "sprichst", 
     "er": "spricht", 
@@ -230,7 +186,7 @@ const verbConjugations: Record<string, Record<string, string>> = {
     "Sie": "sprechen",
     "default": "sprechen"
   },
-  "ist": {
+  "sein": {
     "ich": "bin", 
     "du": "bist", 
     "er": "ist", 
@@ -241,7 +197,18 @@ const verbConjugations: Record<string, Record<string, string>> = {
     "Sie": "sind",
     "default": "sein"
   },
-  "gefällt": {
+  "nennen": {
+    "ich": "nenne", 
+    "du": "nennt", 
+    "er": "nennt", 
+    "sie": "nennt", 
+    "es": "nennt", 
+    "wir": "nennen", 
+    "ihr": "nennt", 
+    "Sie": "nennen",
+    "default": "nennen"
+  },
+  "gefallen": {
     "ich": "gefalle", 
     "du": "gefällst", 
     "er": "gefällt", 
@@ -252,7 +219,18 @@ const verbConjugations: Record<string, Record<string, string>> = {
     "Sie": "gefallen",
     "default": "gefallen"
   },
-  "liebt": {
+  "gratulieren": {
+    "ich": "gratuliere", 
+    "du": "gratulierst", 
+    "er": "gratuliert", 
+    "sie": "gratuliert", 
+    "es": "gratuliert", 
+    "wir": "gratulieren", 
+    "ihr": "gratuliert", 
+    "Sie": "gratulieren",
+    "default": "gratulieren"
+  },
+  "lieben": {
     "ich": "liebe", 
     "du": "liebst", 
     "er": "liebt", 
@@ -263,7 +241,73 @@ const verbConjugations: Record<string, Record<string, string>> = {
     "Sie": "lieben",
     "default": "lieben"
   },
-  "kennt": {
+  "hassen": {
+    "ich": "hasse", 
+    "du": "hasst", 
+    "er": "hasst", 
+    "sie": "hasst", 
+    "es": "hasst", 
+    "wir": "hassen", 
+    "ihr": "hasst", 
+    "Sie": "hassen",
+    "default": "hassen"
+  },
+  "kaufen": {
+    "ich": "kaufe", 
+    "du": "kaufst", 
+    "er": "kauft", 
+    "sie": "kauft", 
+    "es": "kauft", 
+    "wir": "kaufen", 
+    "ihr": "kauft", 
+    "Sie": "kaufen",
+    "default": "kaufen"
+  },
+  "verkaufen": {
+    "ich": "verkaufe", 
+    "du": "verkaufst", 
+    "er": "verkauft", 
+    "sie": "verkauft", 
+    "es": "verkauft", 
+    "wir": "verkaufen", 
+    "ihr": "verkauft", 
+    "Sie": "verkaufen",
+    "default": "verkaufen"
+  },
+  "finden": {
+    "ich": "finde", 
+    "du": "findest", 
+    "er": "findet", 
+    "sie": "findet", 
+    "es": "findet", 
+    "wir": "finden", 
+    "ihr": "findet", 
+    "Sie": "finden",
+    "default": "finden"
+  },
+  "suchen": {
+    "ich": "suche", 
+    "du": "suchst", 
+    "er": "sucht", 
+    "sie": "sucht", 
+    "es": "sucht", 
+    "wir": "suchen", 
+    "ihr": "sucht", 
+    "Sie": "suchen",
+    "default": "suchen"
+  },
+  "brauchen": {
+    "ich": "brauche", 
+    "du": "brauchst", 
+    "er": "braucht", 
+    "sie": "braucht", 
+    "es": "braucht", 
+    "wir": "brauchen", 
+    "ihr": "braucht", 
+    "Sie": "brauchen",
+    "default": "brauchen"
+  },
+  "kennen": {
     "ich": "kenne", 
     "du": "kennst", 
     "er": "kennt", 
@@ -273,6 +317,50 @@ const verbConjugations: Record<string, Record<string, string>> = {
     "ihr": "kennt", 
     "Sie": "kennen",
     "default": "kennen"
+  },
+  "geben": {
+    "ich": "gebe", 
+    "du": "gibst", 
+    "er": "gibt", 
+    "sie": "gibt", 
+    "es": "gibt", 
+    "wir": "geben", 
+    "ihr": "gibt", 
+    "Sie": "geben",
+    "default": "geben"
+  },
+  "nehmen": {
+    "ich": "nehme", 
+    "du": "nimmst", 
+    "er": "nimmt", 
+    "sie": "nimmt", 
+    "es": "nimmt", 
+    "wir": "nehmen", 
+    "ihr": "nimmt", 
+    "Sie": "nehmen",
+    "default": "nehmen"
+  },
+  "lernen": {
+    "ich": "lerne", 
+    "du": "lernst", 
+    "er": "lernt", 
+    "sie": "lernt", 
+    "es": "lernt", 
+    "wir": "lernen", 
+    "ihr": "lernt", 
+    "Sie": "lernen",
+    "default": "lernen"
+  },
+  "verstehen": {
+    "ich": "verstehe", 
+    "du": "verstehst", 
+    "er": "versteht", 
+    "sie": "versteht", 
+    "es": "versteht", 
+    "wir": "verstehen", 
+    "ihr": "versteht", 
+    "Sie": "verstehen",
+    "default": "verstehen"
   }
 };
 
@@ -459,12 +547,11 @@ export default function SentenceBuilder() {
     if (currentPattern.id === 1) { // Subjekt + Verb
       sentence = `${subject.text} ${conjugatedVerb}`;
     } 
-    else if (currentPattern.id === 2) { // Subjekt + Verb + Akkusativ
+    else if (currentPattern.id === 2) { // Subjekt + Verb + Subjekt
       sentence = `${subject.text} ${conjugatedVerb} ${object.text}`;
     } 
-    else if (currentPattern.id === 3) { // Akkusativ + Verb + Subjekt
-      // En alemán, el verbo siempre está en segunda posición, pero la conjugación depende del sujeto
-      sentence = `${object.text} ${conjugatedVerb} ${subject.text}`;
+    else if (currentPattern.id === 3) { // Subjekt + Akkusativ + Verb
+      sentence = `${subject.text} ${object.text} ${verb.text}`;
     } 
     else if (currentPattern.id === 4) { // Subjekt + Verb + Dativ
       sentence = `${subject.text} ${conjugatedVerb} ${dativObj.text}`;
@@ -587,11 +674,17 @@ export default function SentenceBuilder() {
         {activeItem ? (
           <div className={`
             w-32 h-32 flex items-center justify-center
-            border-2 text-center font-medium shape-shadow
-            ${activeItem.type === "nominativ" ? "clip-path-hexagon bg-yellow-300 border-yellow-500" : ""}
-            ${activeItem.type === "verb" ? "clip-path-cross bg-black text-white border-gray-700" : ""}
-            ${activeItem.type === "akkusativ" ? "clip-path-square bg-blue-300 border-blue-500" : ""}
-            ${activeItem.type === "dativ" ? "clip-path-triangle bg-green-300 border-green-500" : ""}
+            text-center font-medium shape-shadow
+            relative
+            ${activeItem.type === "nominativ" ? "clip-path-hexagon bg-yellow-300" : ""}
+            ${activeItem.type === "verb" ? "clip-path-cross bg-black text-white" : ""}
+            ${activeItem.type === "akkusativ" ? "clip-path-square bg-blue-300" : ""}
+            ${activeItem.type === "dativ" ? "clip-path-triangle bg-green-300" : ""}
+            before:absolute before:inset-0 before:content-[''] 
+            ${activeItem.type === "nominativ" ? "before:clip-path-hexagon before:border-2 before:border-yellow-500" : ""}
+            ${activeItem.type === "verb" ? "before:clip-path-cross before:border-2 before:border-gray-700" : ""}
+            ${activeItem.type === "akkusativ" ? "before:clip-path-square before:border-2 before:border-blue-500" : ""}
+            ${activeItem.type === "dativ" ? "before:clip-path-triangle before:border-2 before:border-green-500" : ""}
           `}>
             <span className="px-2 py-1 text-sm sm:text-base z-above-clip-path">{activeItem.text}</span>
           </div>
