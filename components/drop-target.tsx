@@ -112,11 +112,6 @@ function DropTarget({ id, type, position, onDrop, onRemove, item }: DropTargetPr
               ${item.type === "akkusativ" ? "clip-path-square bg-blue-300" : ""}
               ${item.type === "dativ" ? "clip-path-triangle bg-green-300" : ""}
               relative
-              before:absolute before:inset-0 before:content-[''] 
-              ${item.type === "nominativ" ? "before:clip-path-hexagon before:border-2 before:border-yellow-500" : ""}
-              ${item.type === "verb" ? "before:clip-path-cross before:border-2 before:border-gray-700" : ""}
-              ${item.type === "akkusativ" ? "before:clip-path-square before:border-2 before:border-blue-500" : ""}
-              ${item.type === "dativ" ? "before:clip-path-triangle before:border-2 before:border-green-500" : ""}
               text-center font-medium shape-shadow
             `}
           >
@@ -137,11 +132,6 @@ function DropTarget({ id, type, position, onDrop, onRemove, item }: DropTargetPr
             ${getShapeClasses()}
             ${getBackgroundColor()}
             relative
-            before:absolute before:inset-0 before:content-[''] 
-            ${type === "nominativ" ? "before:clip-path-hexagon before:border-2 before:border-dashed before:border-yellow-500" : ""}
-            ${type === "verb" ? "before:clip-path-cross before:border-2 before:border-dashed before:border-gray-700" : ""}
-            ${type === "akkusativ" ? "before:clip-path-square before:border-2 before:border-dashed before:border-blue-500" : ""}
-            ${type === "dativ" ? "before:clip-path-triangle before:border-2 before:border-dashed before:border-green-500" : ""}
             bg-opacity-80
           `}
         >

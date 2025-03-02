@@ -1,0 +1,200 @@
+export const verbConjugations: Record<string, Record<string, string>> = {
+    "sehen": {
+      "ich": "sehe", 
+      "du": "siehst", 
+      "er": "sieht", 
+      "sie": "sieht", 
+      "es": "sieht", 
+      "wir": "sehen", 
+      "ihr": "seht", 
+      "Sie": "sehen",
+      "default": "sehen"
+    },
+    "sprechen": {
+      "ich": "spreche", 
+      "du": "sprichst", 
+      "er": "spricht", 
+      "sie": "spricht", 
+      "es": "spricht", 
+      "wir": "sprechen", 
+      "ihr": "sprecht", 
+      "Sie": "sprechen",
+      "default": "sprechen"
+    },
+    "sein": {
+      "ich": "bin", 
+      "du": "bist", 
+      "er": "ist", 
+      "sie": "ist", 
+      "es": "ist", 
+      "wir": "sind", 
+      "ihr": "seid", 
+      "Sie": "sind",
+      "default": "sein"
+    },
+    "nennen": {
+      "ich": "nenne", 
+      "du": "nennt", 
+      "er": "nennt", 
+      "sie": "nennt", 
+      "es": "nennt", 
+      "wir": "nennen", 
+      "ihr": "nennt", 
+      "Sie": "nennen",
+      "default": "nennen"
+    },
+    "gefallen": {
+      "ich": "gefalle", 
+      "du": "gefällst", 
+      "er": "gefällt", 
+      "sie": "gefällt", 
+      "es": "gefällt", 
+      "wir": "gefallen", 
+      "ihr": "gefallt", 
+      "Sie": "gefallen",
+      "default": "gefallen"
+    },
+    "gratulieren": {
+      "ich": "gratuliere", 
+      "du": "gratulierst", 
+      "er": "gratuliert", 
+      "sie": "gratuliert", 
+      "es": "gratuliert", 
+      "wir": "gratulieren", 
+      "ihr": "gratuliert", 
+      "Sie": "gratulieren",
+      "default": "gratulieren"
+    },
+    "lieben": {
+      "ich": "liebe", 
+      "du": "liebst", 
+      "er": "liebt", 
+      "sie": "liebt", 
+      "es": "liebt", 
+      "wir": "lieben", 
+      "ihr": "liebt", 
+      "Sie": "lieben",
+      "default": "lieben"
+    },
+    "hassen": {
+      "ich": "hasse", 
+      "du": "hasst", 
+      "er": "hasst", 
+      "sie": "hasst", 
+      "es": "hasst", 
+      "wir": "hassen", 
+      "ihr": "hasst", 
+      "Sie": "hassen",
+      "default": "hassen"
+    },
+    "kaufen": {
+      "ich": "kaufe", 
+      "du": "kaufst", 
+      "er": "kauft", 
+      "sie": "kauft", 
+      "es": "kauft", 
+      "wir": "kaufen", 
+      "ihr": "kauft", 
+      "Sie": "kaufen",
+      "default": "kaufen"
+    },
+    "verkaufen": {
+      "ich": "verkaufe", 
+      "du": "verkaufst", 
+      "er": "verkauft", 
+      "sie": "verkauft", 
+      "es": "verkauft", 
+      "wir": "verkaufen", 
+      "ihr": "verkauft", 
+      "Sie": "verkaufen",
+      "default": "verkaufen"
+    },
+    "finden": {
+      "ich": "finde", 
+      "du": "findest", 
+      "er": "findet", 
+      "sie": "findet", 
+      "es": "findet", 
+      "wir": "finden", 
+      "ihr": "findet", 
+      "Sie": "finden",
+      "default": "finden"
+    },
+    "suchen": {
+      "ich": "suche", 
+      "du": "suchst", 
+      "er": "sucht", 
+      "sie": "sucht", 
+      "es": "sucht", 
+      "wir": "suchen", 
+      "ihr": "sucht", 
+      "Sie": "suchen",
+      "default": "suchen"
+    },
+    "brauchen": {
+      "ich": "brauche", 
+      "du": "brauchst", 
+      "er": "braucht", 
+      "sie": "braucht", 
+      "es": "braucht", 
+      "wir": "brauchen", 
+      "ihr": "braucht", 
+      "Sie": "brauchen",
+      "default": "brauchen"
+    },
+    "kennen": {
+      "ich": "kenne", 
+      "du": "kennst", 
+      "er": "kennt", 
+      "sie": "kennt", 
+      "es": "kennt", 
+      "wir": "kennen", 
+      "ihr": "kennt", 
+      "Sie": "kennen",
+      "default": "kennen"
+    },
+    "geben": {
+      "ich": "gebe", 
+      "du": "gibst", 
+      "er": "gibt", 
+      "sie": "gibt", 
+      "es": "gibt", 
+      "wir": "geben", 
+      "ihr": "gibt", 
+      "Sie": "geben",
+      "default": "geben"
+    },
+    "nehmen": {
+      "ich": "nehme", 
+      "du": "nimmst", 
+      "er": "nimmt", 
+      "sie": "nimmt", 
+      "es": "nimmt", 
+      "wir": "nehmen", 
+      "ihr": "nimmt", 
+      "Sie": "nehmen",
+      "default": "nehmen"
+    },
+    "lernen": {
+      "ich": "lerne", 
+      "du": "lernst", 
+      "er": "lernt", 
+      "sie": "lernt", 
+      "es": "lernt", 
+      "wir": "lernen", 
+      "ihr": "lernt", 
+      "Sie": "lernen",
+      "default": "lernen"
+    },
+    "verstehen": {
+      "ich": "verstehe", 
+      "du": "verstehst", 
+      "er": "versteht", 
+      "sie": "versteht", 
+      "es": "versteht", 
+      "wir": "verstehen", 
+      "ihr": "versteht", 
+      "Sie": "verstehen",
+      "default": "verstehen"
+    }
+  };

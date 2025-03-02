@@ -79,7 +79,6 @@
 }
 
 @layer utilities {
-  /* Shape definitions */
   .clip-path-hexagon {
     clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
     transition: transform 0.2s ease-in-out;
@@ -95,8 +94,8 @@
     bottom: 0;
     clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
     pointer-events: none;
+    z-index: 1;
   }
-
   .clip-path-cross {
     clip-path: polygon(
       40% 0%,
@@ -142,7 +141,7 @@
   
   .clip-path-square {
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-    border-radius: 8px;
+    border-radius: 4px;
     transition: transform 0.2s ease-in-out;
     position: relative;
   }
@@ -155,7 +154,7 @@
     right: 0;
     bottom: 0;
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-    border-radius: 8px;
+    border-radius: 4px;
     pointer-events: none;
   }
 
@@ -222,5 +221,4 @@
   .hover\:scale-102:hover {
     transform: scale(1.02);
   }
-  
 }

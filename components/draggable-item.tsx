@@ -22,27 +22,27 @@ function DraggableItem({ id, text, type }: DraggableItemProps) {
     switch (type) {
       case "nominativ":
         return {
-          className: "clip-path-hexagon bg-yellow-300 hover:bg-yellow-200 shape-shadow shape-hover relative before:absolute before:inset-0 before:content-[''] before:clip-path-hexagon before:border-2 before:border-yellow-500",
+          className: "clip-path-hexagon bg-yellow-300 hover:bg-yellow-200 shape-shadow shape-hover relative",
           style: {},
         }
       case "verb":
         return {
-          className: "clip-path-cross bg-black text-white hover:bg-gray-800 shape-shadow shape-hover relative before:absolute before:inset-0 before:content-[''] before:clip-path-cross before:border-2 before:border-gray-700",
+          className: "clip-path-cross bg-black text-white hover:bg-gray-800 shape-shadow shape-hover relative",
           style: {},
         }
       case "akkusativ":
         return {
-          className: "clip-path-square bg-blue-300 hover:bg-blue-200 shape-shadow shape-hover relative before:absolute before:inset-0 before:content-[''] before:clip-path-square before:border-2 before:border-blue-500",
+          className: "clip-path-square bg-blue-300 hover:bg-blue-200 shape-shadow shape-hover relative",
           style: {},
         }
       case "dativ":
         return {
-          className: "clip-path-triangle bg-green-300 hover:bg-green-200 shape-shadow shape-hover relative before:absolute before:inset-0 before:content-[''] before:clip-path-triangle before:border-2 before:border-green-500",
+          className: "clip-path-triangle bg-green-300 hover:bg-green-200 shape-shadow shape-hover relative",
           style: {},
         }
       default:
         return {
-          className: "bg-gray-300 shape-shadow relative before:absolute before:inset-0 before:content-[''] before:border-2 before:border-gray-500",
+          className: "bg-gray-300 shape-shadow relative",
           style: {},
         }
     }
